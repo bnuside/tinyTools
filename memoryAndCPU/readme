@@ -1,0 +1,6 @@
+for rooted android only
+step
+1 install Procrank(bash proc_install.sh)
+2 push kika_memstat.sh to /data/local/tmp, and chmod 777 to it
+3 change directory to /data/local/tmp/, execute kika_memstat.sh by "sh kika_memstat.sh"
+4 pull files /sdcard/cpuinfo.csv, /sdcard/procrank.csv
