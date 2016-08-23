@@ -1,7 +1,14 @@
 #!/bin/bash
 echo "Delete pre-logs..."
 adb shell "rm /sdcard/*.txt"
-adb shell pm clear com.emoji.ikeyboard
+
+echo "Clear data?(Y/N)"
+read CLEAR
+
+if [ $CLEAR = 'Y' ] ; then
+	adb shell pm clear com.emoji.ikeyboard
+fi
+
 echo "iKey:Input(1 for crash/timeout; 2 for ignore timeouts only; 3 for Ignore both): "
 read OPT
 
