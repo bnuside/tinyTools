@@ -2,22 +2,17 @@
 echo "Delete pre-logs..."
 adb shell "rm /sdcard/*.txt"
 
-echo "###########################"
-echo "Select Product:"
-echo "1.kika	2.Pro 	3.iKey"
-echo "###########################"
-read KEYBOARD
-
 PKG=""
 
-if [ $KEYBOARD = '1' ] ; then
+if [ $1 = 'kika' ] ; then
 	PKG="com.qisiemoji.inputmethod"
-elif [ $KEYBOARD = '2' ] ; then
+elif [ $1 = 'pro' ] ; then
 	PKG="com.emoji.coolkeyboard"
-elif [ $KEYBOARD = '3' ]; then
+elif [ $1 = 'ikey' ]; then
 	PKG="com.emoji.ikeyboard"
 else
-	echo "wrong input"
+	echo "param error, default ikey"
+	PKG="com.emoji.ikeyboard"
 fi
 
 echo $PKG
