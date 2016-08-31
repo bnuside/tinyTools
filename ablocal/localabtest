@@ -1,12 +1,10 @@
 #!/bin/bash
-echo "1. kika	2. pro	3. iKey"
-read APP
 PKG=""
-if [ "$APP" = "1" ] ; then
+if [ "$1" = "kika" ] ; then
 	PKG="com.qisiemoji.inputmethod"
-elif [ "$APP" = "2" ] ; then
+elif [ "$1" = "pro" ] ; then
 	PKG="com.emoji.coolkeyboard"
-elif [ "$APP" = "3" ] ; then
+elif [ "$1" = "ikey" ] ; then
 	PKG="com.emoji.ikeyboard"
 else
 	echo "Wrong Selection, run it again"
