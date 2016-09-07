@@ -27,16 +27,18 @@ performance(){
 	COUNTER=0
 	#36000s means 10 hours
 	TIMES=36000
+	SEP=" "
 	while [ $COUNTER -lt $TIMES ]; do
-		echo $COUNTER
+		#echo $COUNTER
 		date_current=`date '+%F %T'`
-		echo $date_current
-		cpuinfo=`dumpsys cpuinfo | grep $PKG`
-		echo ${COUNTER}${date_current}${cpuinfo} >> $CPUINFO	
+		#echo $date_current
+		cpuinfo=`dumpsys cpuinfo | grep com.qisiemoji.inputmethod`
+		echo ${COUNTER}$SEP${date_current}${cpuinfo} >> $CPUINFO	
 		
 		date_current=`date '+%F %T'`
-		procrank=`Procrank | grep $PKG`
-		echo ${COUNTER}${date_current}${procrank} >> $PROCRANK
+		procrank=`Procrank | grep com.qisiemoji.inputmethod`
+		echo ${COUNTER}$SEP${date_current}${procrank} >> $PROCRANK
+		echo ${COUNTER}$SEP${date_current}${procrank}
 		sleep 1
 		let COUNTER=COUNTER+1
 	done
